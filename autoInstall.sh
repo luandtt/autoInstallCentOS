@@ -1,6 +1,6 @@
 #! /bin/bash
 
-SERVER_LIST=/user/krishna/multiserver.txt
+SERVER_LIST=serverlist.txt
 PackageName="wget nano epel-release zlib-devel pcre2-devel make gcc mysql-devel postgresql-devel sqlite-devel libevent libevent-devel"
 
 for Host in $(< $SERVER_LIST )
