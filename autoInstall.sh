@@ -1,13 +1,12 @@
 #! /bin/bash
 
 SERVER_LIST=serverlist.txt
-PackageName="wget nano epel-release zlib-devel pcre2-devel make gcc mysql-devel postgresql-devel sqlite-devel libevent libevent-devel"
+PackageName="wget epel-release zlib-devel pcre2-devel make gcc mysql-devel postgresql-devel sqlite-de$
 
 for Host in $(< $SERVER_LIST )
 do
     echo "Installing package on $Host"
-    ssh "${Host}"  apt-get -y install "${PackageName}"
-    wget https://github.com/ossec/ossec-hids/archive/3.6.0.tar.gz
-    firewall-cmd --permanent --zone=public --add-port=1514/udp --permanent
-    firewall-cmd --reload
+    ssh "${Host}"  yum -y install "${PackageName}"
+    wget https://github.com/ossec/ossec-hids/archive/refs/tags/3.7.0.tar.gz
+    tar -xzvf 3.7.0.tar.gz
 done
