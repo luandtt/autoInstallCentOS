@@ -1,7 +1,7 @@
 #! /bin/bash
 
 SERVER_LIST=serverlist.txt
-PackageName="wget epel-release zlib-devel pcre2-devel make gcc mysql-devel postgresql-devel sqlite-de$
+PackageName="wget epel-release zlib-devel pcre2-devel make gcc mysql-devel postgresql-devel sqlite-devel libevent libevent-devel systemd-devel"
 
 for Host in $(< $SERVER_LIST )
 do
